@@ -27,6 +27,12 @@ RCT_CUSTOM_VIEW_PROPERTY(hideBackground, BOOL, RNSearchBar)
         view.backgroundColor = [UIColor clearColor];
     }
 }
+RCT_CUSTOM_VIEW_PROPERTY(cancelButtonColor, UIColor, RNSearchBar)
+{
+    if ([RCTConvert UIColor:json]) {
+        [[UIBarButtonItem appearanceWhenContainedIn: [UISearchBar class], nil] setTintColor:[RCTConvert UIColor:json]];
+    }
+}
 
 RCT_CUSTOM_VIEW_PROPERTY(textFieldBackgroundColor, UIColor, RNSearchBar)
 {
